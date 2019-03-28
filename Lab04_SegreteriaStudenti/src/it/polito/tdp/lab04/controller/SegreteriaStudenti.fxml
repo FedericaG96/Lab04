@@ -1,14 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="442.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
+<BorderPane prefHeight="442.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
    <top>
       <Label text="Lab3_Segreteria Studenti" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" top="10.0" />
          </BorderPane.margin></Label>
    </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="561.0">
+               <children>
+                  <Label text="Corso:">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin></Label>
+                  <ChoiceBox fx:id="bxCorsi" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></ChoiceBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="561.0">
+               <children>
+                  <Button fx:id="btnCercaIscritti" mnemonicParsing="false" onAction="#doCercaIscritti" text="Cerca iscritti corso">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="53.0" prefWidth="561.0">
+               <children>
+                  <Label text="Studente:">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin></Label>
+                  <TextField fx:id="txtMatricola" promptText="Matricola">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin></TextField>
+                  <Button fx:id="btnAssocia" mnemonicParsing="false" onAction="#doAssocia" style="-fx-background-color: green;" text="√">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <TextField fx:id="txtNome" editable="false" promptText="Nome" />
+                  <TextField fx:id="txtCognome" editable="false" promptText="Cognome" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnCercaCorsi" mnemonicParsing="false" onAction="#doCercaCorsi" text="Cerca corsi">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Button>
+                 
+                  <Button fx:id="btnIscrivi" mnemonicParsing="false" onAction="#doIscrivi" text="Iscrivi">
+                     <HBox.margin>
+                        <Insets left="200.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TextArea fx:id="txtResult" prefHeight="181.0" prefWidth="561.0" />
+            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset" textAlignment="RIGHT">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="500.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
